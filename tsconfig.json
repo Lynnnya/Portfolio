@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/images/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/images/*": ["./public/images/*"]
     },
     "types": [
         "./cloudflare-env.d.ts",
