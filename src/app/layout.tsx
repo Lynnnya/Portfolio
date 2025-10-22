@@ -27,8 +27,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className={darker.className}>
-        <Navbar />
-        {children}
+        <div className="viewport">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
