@@ -11,12 +11,13 @@ const portraitGallery = [
 ];
 const worldGallery = [
   '/images/landingPage/world/EPIC0741-2.jpg',
-  '/images/landingPage/world/EPIC0272-2.jpg',
+  '/images/landingPage/world/EPIC5097.jpg',
   '/images/landingPage/world/EPIC2902-3.jpg',
 ];
 const universeGallery = [
   '/images/landingPage/universe/IC-1396.jpg',
   '/images/landingPage/universe/NGC-7000.jpg',
+  '/images/landingPage/universe/M33.jpg',
 ];
 
 
@@ -32,7 +33,7 @@ export default function Landingpage() {
   }, []);
 
   return (
-    <main className="bg-zinc-950">
+    <main className="bg-zinc-50">
       <div className=" mx-8 mb-8 grid grid-cols-1 sm:grid-cols-3">
         <div className='relative group'>
           <ImageCarousel images={portraitGallery} direction="down" />

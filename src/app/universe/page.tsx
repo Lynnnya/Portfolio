@@ -1,15 +1,21 @@
-"use client";
+import PhotoTemplate from "@/components/ui/photoTemplate";
 
-import Link from "next/link";
-import Image from 'next/image'
-
-export default function universePage() {
+export default function UniversePage() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen bg-zinc-950">
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3">
-        <Image src="/images/NGC-7000-Meow.jpg" alt="NGC 7000" className="w-full h-full object-cover" />
-      </div>
-
-    </main>
-  )
+    <main className="bg-zinc-950">
+      < div className="m-8" >
+        <PhotoTemplate
+          hero="/images/universe/IC-1396.jpg"
+          leftColumn={[
+            "/images/universe/M33.jpg",
+            "/images/universe/NGC-7000.jpg",
+          ]}
+          rightColumn={[
+            "/images/universe/IC-1396.jpg",
+            "/images/universe/star2.jpg",
+          ]}
+        />
+      </div >
+    </main >
+  );
 }

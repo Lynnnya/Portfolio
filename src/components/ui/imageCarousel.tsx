@@ -9,7 +9,7 @@ interface ImageCarouselProps {
     aspectRatio?: string;
     interval?: number;
     direction?: 'up' | 'down';
-    index?: number; // <-- new
+    index?: number;
 }
 
 export default function ImageCarousel({
@@ -19,11 +19,12 @@ export default function ImageCarousel({
     direction = 'up',
     index: externalIndex,
 }: ImageCarouselProps) {
+
     const [localIndex, setLocalIndex] = useState(0);
-    const index = externalIndex ?? localIndex; // use external if provided
+    const index = externalIndex ?? localIndex;
 
     useEffect(() => {
-        if (externalIndex !== undefined) return; // parent controls it
+        if (externalIndex !== undefined) return;
         const timer = setInterval(() => {
             setLocalIndex((prev) => (prev + 1) % images.length);
         }, interval);
@@ -49,6 +50,13 @@ export default function ImageCarousel({
                             alt={`Image ${index + 1}`}
                             fill
                             className="object-cover w-full h-full"
+
+                            sizes="(max-width: 640px) 100vw, 
+                                   (max-width: 1024px) 50vw, 
+                                   33vw"
+
+                            priority={index === 0}
+                            loading={index === 0 ? "eager" : "lazy"}
                         />
                     </motion.div>
                 </AnimatePresence>
