@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   s
                 )
               )
-              : "props" in socials
+              : typeof socials === "object" && "props" in socials
                 ? (
                   <socials.type
                     {...socials.props}
