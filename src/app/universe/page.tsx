@@ -1,9 +1,9 @@
 import PhotoTemplate from "@/components/ui/photoTemplate";
 
-export default function UniversePage() {
+export default function universePage() {
   return (
     <main className="bg-zinc-950">
-      < div className="m-8" >
+      < div className="mx-8" >
         <PhotoTemplate
           hero="/images/universe/IC-1396.jpg"
           leftColumn={[

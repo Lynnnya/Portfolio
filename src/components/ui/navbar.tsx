@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const theme =
     navbarThemes[pathname] ||
     navbarThemes[pathname.split("/")[1] ? `/${pathname.split("/")[1]}` : "/"] ||
-    navbarThemes["/"]; // fallback
+    navbarThemes["/"];
 
   const linksToRender = navLinks
     .filter((link) => {
@@ -57,11 +57,11 @@ const Navbar: React.FC<NavbarProps> = ({
     <nav className={`w-full sticky p-8 ${theme.bg} ${theme.text}`}>
       <div className="flex top-12 right-12 left-12 justify-between items-center">
         {/* Desktop links */}
-        <ul className="hidden md:flex space-x-6">{linksToRender}</ul>
+        <ul className="hidden lg:flex space-x-6">{linksToRender}</ul>
 
         {/* Title */}
         <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/8">
-          <p className="whitespace-nowrap text-4xl md:text-5xl">
+          <p className="whitespace-nowrap text-4xl lg:text-5xl">
             {title}
           </p>
         </div>
@@ -93,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-menu"
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile links */}
       <ul
         id="mobile-menu"
-        className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"} mt-2`}
+        className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"} mt-2`}
       >
         {linksToRender}
       </ul>
